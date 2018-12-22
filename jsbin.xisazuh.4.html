@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by gyn83 (http://jsbin.com/xisazuh/4/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<head>
+  <title>html basics</title>
+  <link href="https://fonts.googleapis.com/css?family=Aleo" rel="stylesheet">
+<style id="jsbin-css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#clock {
+ font-size: 10rem;
+ font-family: 'Aleo', serif;
+ color: white;
+}
+</style>
+</head>  
+
+<body>
+<div id="clock">
+  <dic class="time">12:13:14</div>
+</div>  
+
+<script id="jsbin-javascript">
+function colorClock() {
+
+var date = new Date();
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+
+
+if (seconds < 10) {
+  seconds = '0' + seconds;
+}
+
+if (minutes < 10) {
+  minutes = '0' + minutes;
+}
+
+if (hours < 10) {
+  hours = '0' + hours;
+}
+
+
+var clockFace = hours + ':' + minutes + ':' + seconds;
+var hexColor = '#' + hours + minutes + seconds;
+
+document.getElementById('clock').innerHTML = clockFace;
+document.body.style.background = hexColor;
+
+
+  setTimeout(function() {
+  colorClock();
+}, 1000);
+
+}
+
+colorClock();
+
+
+
+
+
+
+
+
+
+</script>
+</body>
